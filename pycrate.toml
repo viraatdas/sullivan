@@ -1,0 +1,4 @@
+[tool.pycrate]
+name = "pycrate"
+version = "0.1.0"
+description = "Cargo for Python - package manager for Python"
