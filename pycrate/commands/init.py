@@ -107,5 +107,5 @@ target/
             with open(os.path.join(project_name, key), 'w') as f:
                 f.write(value)
 
-    click.echo(f"Initialized project {project_name}")
-
+    click.echo(click.style(f"Initialized project {project_name}", fg="green", bold=True))
+    
