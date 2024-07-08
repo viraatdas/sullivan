@@ -1,8 +1,6 @@
 # pycrate
 Cargo for for Python - package manager for python
 
-Built with Haskell
-
 ## Features
 - [ ] **Initialize Projects**: Create a new Python project with a standard structure.
 - [ ] **Install Packages**: Install Python packages and manage dependencies.
