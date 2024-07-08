@@ -6,10 +6,13 @@ Built with Haskell
 ## Features
 - [ ] **Initialize Projects**: Create a new Python project with a standard structure.
 - [ ] **Install Packages**: Install Python packages and manage dependencies.
-- [ ]**Configure Repository**: Set and configure package repositories.
+- [ ] **Configure Repository**: Set and configure package repositories.
 - [ ] **Run Projects**: Run Python projects with a simple command.
 - [ ] **Run Tests**: Run tests for your Python project.
 - [ ] **Generate Documentation**: Generate documentation for your Python project.
+
+## Installation
+*todo*
 
 ## Usage
 
@@ -49,4 +52,13 @@ This can also be modified from the `pycrate.toml` file
 pycrate run
 ```
 
-### Testing 
+### Run tests
+```
+pycrate test
+```
+
+
+### Generate documentation
+```
+pycrate doc
+```
