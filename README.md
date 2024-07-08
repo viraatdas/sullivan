@@ -31,8 +31,10 @@ This will produce:
 my_project/
 ├── pycrate.toml
 ├── setup.py
-└── src/
+├── src/
     └── main.py
+├── tests/
+    └── test_main.py
 ```
 
 ### Install a package
