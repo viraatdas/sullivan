@@ -46,8 +46,19 @@ setup(
     packages=find_packages()
 )
 """,
-        "src": {},
-        "tests": {},
+        "src/main.py": f"""# {project_name} main script
+
+def main():
+    print("Hello, PyCrate!")
+
+if __name__ == "__main__":
+    main()
+""",
+        "tests/test_main.py": f"""# Tests for {project_name}
+
+def test_example():
+    assert 1 + 1 == 2
+""",
         "README.md": f"# {project_name}\n\nFill this with more details.",
         ".gitignore": """# Byte-compiled / optimized / DLL files
 __pycache__/
@@ -142,7 +153,10 @@ target/
         if isinstance(value, dict):
             os.makedirs(os.path.join(project_name, key))
         else:
-            with open(os.path.join(project_name, key), 'w') as f:
+            # Ensure directory exists before creating the file
+            file_path = os.path.join(project_name, key)
+            os.makedirs(os.path.dirname(file_path), exist_ok=True)
+            with open(file_path, 'w') as f:
                 f.write(value)
 
     click.echo(click.style(f"Initialized project {project_name}", fg="yellow", bold=True))

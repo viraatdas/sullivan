@@ -23,9 +23,12 @@ def build():
     for package_name, version in all_dependencies.items():
         install_package(package_name, version, target_dir)
 
-    click.echo(click.style("Build completed. All dependencies are installed.", fg="green"))
+    click.echo(click.style("Build completed. All dependencies are installed.", fg="red"))
 
 def install_package(package_name, version, target_dir):
     """Install a specific package version to the target directory."""
-    package_str = f"{package_name}=={version}" if version != 'unknown' else package_name
+    if version == "latest":
+        package_str = f"{package_name}" if version != 'unknown' else package_name
+    else:
+      package_str = f"{package_name}=={version}" if version != 'unknown' else package_name
     subprocess.check_call([sys.executable, '-m', 'pip', 'install', '--target', target_dir, package_str])
