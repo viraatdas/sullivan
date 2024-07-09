@@ -6,11 +6,52 @@ import click
 def init(project_name):
     """Initialize a new Python project."""
     project_structure = {
-        "pycrate.toml": "[tool.pycrate]\n",
-        "setup.py": "from setuptools import setup, find_packages\n\nsetup(name='{}', version='0.1', packages=find_packages())\n".format(project_name),
+        "pycrate.toml": f"""
+[tool.pycrate]
+name = "{project_name}"
+version = "0.1.0"
+description = "A new Python project"
+
+[tool.pycrate.dependencies]
+# Regular dependencies: essential libraries for the project to run
+requests = "latest"
+pydantic = "latest"
+
+[tool.pycrate.dev-dependencies]
+# Development dependencies: tools needed for development (e.g., formatting, linting)
+black = "latest"
+flake8 = "latest"
+mypy = "latest"
+
+[tool.pycrate.test-dependencies]
+# Test dependencies: libraries required for testing
+pytest = "latest"
+pytest-cov = "latest"
+hypothesis = "latest"
+
+[tool.pycrate.scripts]
+# Entry point script for the project
+main = "src/main.py"
+
+[tool.pycrate.python]
+# Python version specification: default is '>=3.6,<4.0'
+# You can specify a range of versions like '>=3.6,<3.10'
+# Or a specific version like '3.8'
+# Or allow any version with '*'
+version = ">=3.6,<4.0"
+""",
+        "setup.py": f"""
+from setuptools import setup, find_packages
+
+setup(
+    name='{project_name}', 
+    version='0.1', 
+    packages=find_packages()
+)
+""",
         "src": {},
         "tests": {},
-        "README.md": "# {} fill this more".format(project_name),
+        "README.md": f"# {project_name}\n\nFill this with more details.",
         ".gitignore": """# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -96,7 +137,7 @@ ipython_config.py
 target/
 
 .DS_Store
-""",
+"""
     }
 
     os.makedirs(project_name)
@@ -108,4 +149,6 @@ target/
                 f.write(value)
 
     click.echo(click.style(f"Initialized project {project_name}", fg="yellow", bold=True))
-    
+
+if __name__ == "__main__":
+    init()
