@@ -10,24 +10,21 @@ def init(project_name):
 [tool.pycrate]
 name = "{project_name}"
 version = "0.1.0"
+authors = ["Your Name <you@example.com>"]
 description = "A new Python project"
 
 [tool.pycrate.dependencies]
 # Regular dependencies: essential libraries for the project to run
-requests = "latest"
 pydantic = "latest"
 
 [tool.pycrate.dev-dependencies]
 # Development dependencies: tools needed for development (e.g., formatting, linting)
 black = "latest"
 flake8 = "latest"
-mypy = "latest"
 
 [tool.pycrate.test-dependencies]
 # Test dependencies: libraries required for testing
 pytest = "latest"
-pytest-cov = "latest"
-hypothesis = "latest"
 
 [tool.pycrate.scripts]
 # Entry point script for the project
@@ -38,7 +35,7 @@ main = "src/main.py"
 # You can specify a range of versions like '>=3.6,<3.10'
 # Or a specific version like '3.8'
 # Or allow any version with '*'
-version = ">=3.6,<4.0"
+version = "3.10"
 """,
         "setup.py": f"""
 from setuptools import setup, find_packages
