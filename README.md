@@ -1,6 +1,10 @@
 # sullivan 
 Cargo for for Python - package manager for python
 
+<p align="center">
+  <img src="logo.png" alt="Sullivan Logo" width="25%">
+</p>
+
 ## Features
 - [ ] **Initialize Projects**: Create a new Python project with a standard structure.
 - [ ] **Install Packages**: Install Python packages and manage dependencies.
