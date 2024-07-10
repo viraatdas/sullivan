@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='pycrate',
+    name='pyscorch',
     version='0.1.0',
     author='Viraat Das',
     author_email='viraat.laldas@gmail.com',

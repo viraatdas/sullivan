@@ -1,4 +1,4 @@
-# pycrate
+# pyscorch 
 Cargo for for Python - package manager for python
 
 ## Features
