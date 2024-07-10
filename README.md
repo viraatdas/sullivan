@@ -16,7 +16,9 @@ Cargo for for Python - package manager for python
 - [ ] Easily allow you to configure Python versions (without explicitly using pyenv)
 
 ## Installation
-*todo*
+```
+pip install sullivan
+```
 
 ## Usage
 
