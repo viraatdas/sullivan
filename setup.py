@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='sullivan',
-    version='0.1.1',
+    version='0.1.2',
     author='Viraat Das',
     author_email='viraat.laldas@gmail.com',
     description='Cargo for Python - a hassle-free package manager for Python',

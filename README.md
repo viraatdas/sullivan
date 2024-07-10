@@ -5,6 +5,8 @@ Cargo for for Python - package manager for python
   <img src="logo.png" alt="Sullivan Logo" width="25%">
 </p>
 
+[![PyPI version](https://badge.fury.io/py/sullivan.svg)](https://badge.fury.io/py/sullivan)
+
 ## Features
 - [ ] **Initialize Projects**: Create a new Python project with a standard structure.
 - [ ] **Install Packages**: Install Python packages and manage dependencies.
