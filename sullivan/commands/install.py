@@ -9,9 +9,9 @@ import toml
 @click.option('--dev', is_flag=True, help='Install as a development dependency.')
 @click.option('--test', is_flag=True, help='Install as a test dependency.')
 def install(package_name, dev, test):
-    """Install a package and add it to pycrate.toml."""
-    # Read pycrate.toml
-    with open('pycrate.toml', 'r') as f:
+    """Install a package and add it to sullivan.toml."""
+    # Read sullivan.toml
+    with open('sullivan.toml', 'r') as f:
         config = toml.load(f)
     
     # Determine the target section
@@ -30,13 +30,13 @@ def install(package_name, dev, test):
     # Install package to target directory
     subprocess.check_call([sys.executable, '-m', 'pip', 'install', '--target', target_dir, package_name])
     
-    # Add the package to the appropriate section in pycrate.toml
-    if section not in config['tool']['pycrate']:
-        config['tool']['pycrate'][section] = {}
+    # Add the package to the appropriate section in sullivan.toml
+    if section not in config['tool']['sullivan']:
+        config['tool']['sullivan'][section] = {}
     
-    config['tool']['pycrate'][section][package_name] = get_installed_version(package_name, target_dir)
+    config['tool']['sullivan'][section][package_name] = get_installed_version(package_name, target_dir)
     
-    with open('pycrate.toml', 'w') as f:
+    with open('sullivan.toml', 'w') as f:
         toml.dump(config, f)
     
     click.echo(click.style(f"Installed {package_name} ({section})", fg="green"))
@@ -44,7 +44,7 @@ def install(package_name, dev, test):
 def get_installed_version(package_name, target_dir):
     """Get the version of an installed package."""
     try:
-        result = subprocess.check_output([sys.executable, '-m', 'pip', 'show', package_name, '--target', target_dir])
+        result = subprocess.check_output([sys.executable, '-m', 'pip', 'show', '--target', target_dir, package_name])
         for line in result.decode().split('\n'):
             if line.startswith('Version:'):
                 return line.split()[1]

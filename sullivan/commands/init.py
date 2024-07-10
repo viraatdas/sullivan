@@ -6,31 +6,31 @@ import click
 def init(project_name):
     """Initialize a new Python project."""
     project_structure = {
-        "pycrate.toml": f"""
-[tool.pycrate]
+        "sullivan.toml": f"""
+[tool.sullivan]
 name = "{project_name}"
 version = "0.1.0"
 authors = ["Your Name <you@example.com>"]
 description = "A new Python project"
 
-[tool.pycrate.dependencies]
+[tool.sullivan.dependencies]
 # Regular dependencies: essential libraries for the project to run
 pydantic = "latest"
 
-[tool.pycrate.dev-dependencies]
+[tool.sullivan.dev-dependencies]
 # Development dependencies: tools needed for development (e.g., formatting, linting)
 black = "latest"
 flake8 = "latest"
 
-[tool.pycrate.test-dependencies]
+[tool.sullivan.test-dependencies]
 # Test dependencies: libraries required for testing
 pytest = "latest"
 
-[tool.pycrate.scripts]
+[tool.sullivan.scripts]
 # Entry point script for the project
 main = "src/main.py"
 
-[tool.pycrate.python]
+[tool.sullivan.python]
 # Python version specification: default is '>=3.6,<4.0'
 # You can specify a range of versions like '>=3.6,<3.10'
 # Or a specific version like '3.8'
@@ -49,7 +49,7 @@ setup(
         "src/main.py": f"""# {project_name} main script
 
 def main():
-    print("Hello, PyCrate!")
+    print("Hello, sullivan!")
 
 if __name__ == "__main__":
     main()
@@ -88,8 +88,8 @@ share/python-wheels/
 *.egg
 MANIFEST
 
-# PyCrate metadata
-pycrate.egg-info/
+# sullivan metadata
+sullivan.egg-info/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -141,7 +141,7 @@ docs/_build/
 profile_default/
 ipython_config.py
 
-# PyCrate packages
+# sullivan packages
 target/
 
 .DS_Store

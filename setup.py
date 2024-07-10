@@ -1,14 +1,14 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='pyscorch',
-    version='0.1.0',
+    name='sullivan',
+    version='0.1.1',
     author='Viraat Das',
     author_email='viraat.laldas@gmail.com',
     description='Cargo for Python - a hassle-free package manager for Python',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
-    url='https://github.com/viraatdas/pycrate',
+    url='https://github.com/viraatdas/sullivan',
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
@@ -17,7 +17,7 @@ setup(
     ],
     entry_points='''
         [console_scripts]
-        pycrate=pycrate.cli:cli
+        sullivan=sullivan.cli:cli
     ''',
     classifiers=[
         'Programming Language :: Python :: 3',

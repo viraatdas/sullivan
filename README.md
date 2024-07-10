@@ -1,4 +1,4 @@
-# pyscorch 
+# sullivan 
 Cargo for for Python - package manager for python
 
 ## Features
@@ -22,18 +22,18 @@ Cargo for for Python - package manager for python
 
 ### Initialize a project
 ```
-pycrate init <project_name>
+sullivan init <project_name>
 ```
 
 Ex.
 ```
-pycrate init my_project
+sullivan init my_project
 ```
 
 This will produce:
 ```
 my_project/
-├── pycrate.toml
+├── sullivan.toml
 ├── setup.py
 ├── src/
 │   └── main.py
@@ -45,30 +45,30 @@ my_project/
 
 ### Install a package
 ```
-pycrate install <package_name>
+sullivan install <package_name>
 ```
 
 ### Configure repository 
 ```
-pycrate configure <repository_url>
+sullivan configure <repository_url>
 ``` 
 
-This can also be modified from the `pycrate.toml` file
+This can also be modified from the `sullivan.toml` file
 
 ### Run the project
 ```
-pycrate run
+sullivan run
 ```
 
 ### Run tests
 ```
-pycrate test
+sullivan test
 ```
 
 
 ### Generate documentation
 ```
-pycrate doc
+sullivan doc
 ```
 
 
@@ -83,3 +83,4 @@ To mimic Cargo’s local installation approach:
 - Ensure compatibility with existing tools and libraries within the Python ecosystem.
 - Provide a clear and simple way to manage Python versions.
 - Optimize performance for dependency resolution and installation.
+

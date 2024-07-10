@@ -7,16 +7,16 @@ import sys
 @click.command()
 def build():
     """Build the project by ensuring all dependencies are installed."""
-    with open('pycrate.toml', 'r') as f:
+    with open('sullivan.toml', 'r') as f:
         config = toml.load(f)
     
     target_dir = os.path.join('target', 'dependencies')
     if not os.path.exists(target_dir):
         os.makedirs(target_dir)
     
-    dependencies = config['tool']['pycrate'].get('dependencies', {})
-    dev_dependencies = config['tool']['pycrate'].get('dev-dependencies', {})
-    test_dependencies = config['tool']['pycrate'].get('test-dependencies', {})
+    dependencies = config['tool']['sullivan'].get('dependencies', {})
+    dev_dependencies = config['tool']['sullivan'].get('dev-dependencies', {})
+    test_dependencies = config['tool']['sullivan'].get('test-dependencies', {})
 
     all_dependencies = {**dependencies, **dev_dependencies, **test_dependencies}
 

@@ -1,5 +1,5 @@
 import click
-from pycrate.commands import init, install, build, run
+from sullivan.commands import init, install, build, run
 
 @click.group()
 def cli():
