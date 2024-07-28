@@ -4,9 +4,15 @@ import click
 import toml
 import sys
 
+from sullivan.optimization.PyPyOptimization import PyPyOptimization
+
 @click.command()
 def build():
-    """Build the project by ensuring all dependencies are installed."""
+    """
+    Build the project by ensuring all dependencies are installed.
+    
+    Run any optimizations if needed
+    """
     with open('sullivan.toml', 'r') as f:
         config = toml.load(f)
     
@@ -22,6 +28,17 @@ def build():
 
     for package_name, version in all_dependencies.items():
         install_package(package_name, version, target_dir)
+
+    optimization_level = config['tool']['sullivan']['optimization'].get("level", "O")
+    if optimization_level == "O":
+        pass
+    elif optimization_level == "O1": 
+        # Only PyPy optimization
+        pypy_optimization = PyPyOptimization("boom")
+        pass
+    elif optimization_level == "O2":
+        # PyPy and Cython Optimization
+        pass
 
     click.echo(click.style("Build completed. All dependencies are installed.", fg="red"))
 

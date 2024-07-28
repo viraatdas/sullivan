@@ -1,5 +1,7 @@
 # sullivan 
-Cargo for for Python - package manager for python
+Cargo for Python - package manager for python
+
+Still under development - expect things to not work perfectly
 
 <p align="center">
   <img src="logo.png" alt="Sullivan Logo" width="25%">
